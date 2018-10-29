@@ -6,3 +6,22 @@ dependencies:
     vars:
       docker_users: ["vagrant"]
     when: halyard_platform == "docker"
+
+galaxy_info:
+  author: wikitops
+  description: Halyard for Linux.
+  company: "Wikitops"
+  license: "license (BSD, MIT)"
+  min_ansible_version: 2.4
+  platforms:
+  - name: Debian
+    versions:
+    - jessie
+  - name: Ubuntu
+    versions:
+    - trusty
+    - xenial
+  galaxy_tags:
+    - python
+    - pip
+    - package
