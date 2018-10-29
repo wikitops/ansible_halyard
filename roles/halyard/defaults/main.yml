@@ -1,0 +1,18 @@
+---
+
+###
+# HALYARD
+###
+
+# Version
+halyard_version: 1.12.0
+
+# Installation
+halyard_platform: baremetal # Or: baremetal
+
+# Script
+halyard_install_script_url: https://raw.githubusercontent.com/spinnaker/halyard/master/install/debian/InstallHalyard.sh
+
+# User
+halyard_user: halyard
+halyard_group: halyard

@@ -1,0 +1,23 @@
+---
+
+- name: HALYARD ON BAREMETAL | Check installation
+  stat:
+    path: /usr/local/bin/hal
+  register: halyard_installed
+
+- name: HALYARD ON BAREMETAL | Get installation script
+  get_url:
+    url: "{{ halyard_install_script_url }}"
+    dest: /tmp/halyard_install.sh
+    owner: root
+    group: root
+    mode: 0755
+  when: not halyard_installed.stat.exists
+
+- name: HALYARD ON BAREMETAL | Installation (this may take few minutes)
+  shell: /tmp/halyard_install.sh --user {{ halyard_user }} -y
+  when: not halyard_installed.stat.exists
+
+- name: HALYARD ON BAREMETAL | Set version to be used
+  shell: hal config version edit --version {{ halyard_version }}
+  when: not halyard_installed.stat.exists

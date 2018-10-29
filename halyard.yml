@@ -1,0 +1,7 @@
+---
+
+- hosts: halyard
+  remote_user: vagrant
+  become: yes
+  roles:
+    - halyard

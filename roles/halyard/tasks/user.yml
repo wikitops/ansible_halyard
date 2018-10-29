@@ -1,0 +1,15 @@
+---
+
+- name: HALYARD USER | Manage grouo
+  group:
+    name: "{{ halyard_group }}"
+    state: present
+
+- name: HALYARD USER | Manage user
+  user:
+    name: "{{ halyard_user }}"
+    group: "{{ halyard_group }}"
+    comment: Halyard user
+    shell: /bin/bash
+    create_home: yes
+    state: present
