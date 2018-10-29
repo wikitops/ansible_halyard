@@ -1,6 +1,6 @@
 ---
 
-- name: HALYARD USER | Manage grouo
+- name: HALYARD USER | Manage group
   group:
     name: "{{ halyard_group }}"
     state: present
